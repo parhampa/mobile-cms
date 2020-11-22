@@ -15,126 +15,208 @@
     <span style="font-size: 16px;" class="w3-btn w3-card">☰</span>
     <span style="font-size: 16px;" class="w3-red w3-btn w3-card">منو</span>
 </div>
-
-<div style="width: 100%;" class="picslide1"><img src="2020-11-20_164056.png" style="width: 100%;"></div>
-<div style="width: 100%; display: none;" class="picslide1"><img src="2020-11-20_164041.png" style="width: 100%;"></div>
-<div style="width: 100%; display: none;" class="picslide1"><img src="2020-11-20_163848.png" style="width: 100%;"></div>
-<div id="slid1btns" class="btnplace"></div>
-<script>
-    load_slid_btn("slid1btns", "picslide1", 3);
-</script>
-
-<h3 style="font-weight: bold;" class="w3-container">آخرین محصولات</h3>
-<div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;">
-    <table style="text-align: center;">
-        <tr>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                asdasd
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                xcvxcv
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                cxv
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                sad
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                xcv
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                sad
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                xcvxc
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                fsdgdf
-            </td>
-        </tr>
-    </table>
-</div>
-<br>
-<hr>
-
-<h3 style="font-weight: bold;" class="w3-container">آخرین مطالب</h3>
-<div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;">
-    <table style="text-align: center;">
-        <tr>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                asdasd
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                xcvxcv
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                cxv
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                sad
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                xcv
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                sad
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                xcvxc
-            </td>
-            <td>
-                <img src="nopic.jpg" class="postpic">
-                <br>
-                fsdgdf
-            </td>
-        </tr>
-    </table>
-</div>
-<br>
-<br>
-<div class="w3-red">
-    <h3 style="font-weight: bold;" class="w3-container">درباره ما</h3>
-    <div style="width: 100%;" class="w3-container">
-        <p>در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته
-            می
-            شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما
-            نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن
-            درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این
-            قسمت
-            متن درباره ما نوشته می شود.</p>
+<div class="page" id="mainpage">
+    <div id="mainslid">
+        <div id="mainslidpic">
+            <div style="width: 100%;" class="picslide1"><img src="2020-11-20_164056.png" style="width: 100%;"></div>
+            <div style="width: 100%; display: none;" class="picslide1"><img src="2020-11-20_164041.png"
+                                                                            style="width: 100%;">
+            </div>
+            <div style="width: 100%; display: none;" class="picslide1"><img src="2020-11-20_163848.png"
+                                                                            style="width: 100%;">
+            </div>
+        </div>
+        <div id="slid1btns" class="btnplace"></div>
     </div>
-    <div style="text-align: center;">طراحی و پیاده سازی توسط profeb</div>
+    <script>
+        load_slid_btn("slid1btns", "picslide1", 3);
+    </script>
+
+    <h3 style="font-weight: bold;" class="w3-container">آخرین محصولات</h3>
+    <div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;">
+        <table style="text-align: center;">
+            <tr>
+                <td>
+                    <img src="nopic.jpg" class="postpic" onclick="gotopage('kalapg')">
+                    <br>
+                    asdasd
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    xcvxcv
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    cxv
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    sad
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    xcv
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    sad
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    xcvxc
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    fsdgdf
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <hr>
+
+    <h3 style="font-weight: bold;" class="w3-container">آخرین مطالب</h3>
+    <div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;">
+        <table style="text-align: center;">
+            <tr>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    asdasd
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    xcvxcv
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    cxv
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    sad
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    xcv
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    sad
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    xcvxc
+                </td>
+                <td>
+                    <img src="nopic.jpg" class="postpic">
+                    <br>
+                    fsdgdf
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="w3-red">
+        <h3 style="font-weight: bold;" class="w3-container">درباره ما</h3>
+        <div style="width: 100%;" class="w3-container">
+            <p>در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما
+                نوشته
+                می
+                شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره
+                ما
+                نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت
+                متن
+                درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در این قسمت متن درباره ما نوشته می شود.در
+                این
+                قسمت
+                متن درباره ما نوشته می شود.</p>
+        </div>
+        <div style="text-align: center;">طراحی و پیاده سازی توسط profeb</div>
+        <br>
+    </div>
 </div>
+<div id="kalapg" class="page">
+    <div id="kalaslid">
+        <div id="kalaslidpic">
+            <div style="width: 100%;" class="kalaslide1"><img src="2020-11-20_164056.png" style="width: 100%;">
+            </div>
+            <div style="width: 100%; display: none;" class="kalaslide1"><img src="2020-11-20_164041.png"
+                                                                             style="width: 100%;">
+            </div>
+            <div style="width: 100%; display: none;" class="kalaslide1"><img src="2020-11-20_163848.png"
+                                                                             style="width: 100%;">
+            </div>
+        </div>
+        <div id="kalaslid1btns" class="btnplace"></div>
+    </div>
+    <script>
+        load_slid_btn("kalaslid1btns", "kalaslide1", 3);
+    </script>
+    <div class="w3-container">
+        <h3 style="font-family: 'tahoma'; font-weight: bold;">عنوان کالا</h3>
+        <div>
+            asdlasjhl asdljkashdkj ashdlasjk dhasjkld hasldk hasdl jkashdlk jhflasdjkfhsdjklh
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="w3-btn w3-green w3-round" onclick="showsubkala('vijegi')">ویژگی ها</span>
+            <span class="w3-btn w3-blue w3-round" onclick="showsubkala('nazarat')">نظرات</span>
+            <span class="w3-btn w3-blue-gray w3-round">ارسال نظر</span>
+        </div>
+        <script>
+            function hidesubkala() {
+                for (i = 0; i < document.getElementsByClassName('subkalapg').length; i++) {
+                    document.getElementsByClassName('subkalapg')[i].style.display = "none";
+                }
+            }
+
+            function showsubkala(id) {
+                hidesubkala();
+                document.getElementById(id).style.display = "";
+            }
+        </script>
+        <div id="vijegi" class="subkalapg" style="width: 100%; margin-top: 10px;">
+            <table class="w3-table-all" style="width: 100%;">
+                <tr>
+                    <th class="w3-right-align">عنوان ویژگی</th>
+                    <th class="w3-right-align">شرح</th>
+                </tr>
+                <tr>
+                    <td class="w3-right-align">test</td>
+                    <td class="w3-right-align">test</td>
+                </tr>
+                <tr>
+                    <td class="w3-right-align">test</td>
+                    <td class="w3-right-align">test</td>
+                </tr>
+            </table>
+        </div>
+        <div id="nazarat" class="subkalapg" style="width: 100%; margin-top: 10px; display: none;">
+
+            <div class="w3-panel w3-round w3-light-gray w3-padding-24">
+                <span>mr oxy</span>
+                <div>
+                    this is user comment....
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>loadpages();</script>
 </body>
 </html>
