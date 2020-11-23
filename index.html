@@ -11,9 +11,11 @@
 </head>
 <body style="direction: rtl; font-family: Tahoma;">
 
-<div class="scrollmenu w3-row w3-red" style="direction:rtl; padding-left: 20%; padding-top: 3px; padding-bottom: 3px;">
-    <span style="font-size: 16px;" class="w3-btn w3-card">☰</span>
-    <span style="font-size: 16px;" class="w3-red w3-btn w3-card">منو</span>
+<div class="scrollmenu w3-row w3-red" style="direction:rtl; padding-top: 3px; padding-bottom: 3px;">
+    <span style="font-size: 16px;" class="w3-btn w3-card w3-right">☰</span>
+    <span style="font-size: 16px;" class="w3-red w3-btn w3-card w3-left"><img src="home.png"
+                                                                              style="width: 15px;"
+                                                                              onclick="gotopage('mainpage')"></span>
 </div>
 <div class="page" id="mainpage">
     <div id="mainslid">
@@ -87,7 +89,7 @@
         <table style="text-align: center;">
             <tr>
                 <td>
-                    <img src="nopic.jpg" class="postpic">
+                    <img src="nopic.jpg" class="postpic" onclick="gotopage('newspg')">
                     <br>
                     asdasd
                 </td>
@@ -175,7 +177,7 @@
         <div style="margin-top: 10px;">
             <span class="w3-btn w3-green w3-round" onclick="showsubkala('vijegi')">ویژگی ها</span>
             <span class="w3-btn w3-blue w3-round" onclick="showsubkala('nazarat')">نظرات</span>
-            <span class="w3-btn w3-blue-gray w3-round">ارسال نظر</span>
+            <span class="w3-btn w3-blue-gray w3-round" onclick="loadsndnazar()">ارسال نظر</span>
         </div>
         <script>
             function hidesubkala() {
@@ -215,8 +217,151 @@
             </div>
 
         </div>
+
+        <div id="send_nazar" class="subkalapg w3-light-gray w3-round w3-container w3-padding-24"
+             style="width: 100%; margin-top: 10px; display: none;">
+
+        </div>
+        <script>
+            function loadsndnazar() {
+                placeid = "send_nazar";
+                document.getElementById(placeid).innerHTML = "";
+
+                label.title = "نام و نام خانوادگی";
+                label.classes = "w3-text-green";
+                make_label();
+
+                input.type = "text";
+                input.name = "name";
+                input.id = "name";
+                input.classes = "w3-input w3-border";
+                makeinput();
+
+                label.title = "ایمیل";
+                label.classes = "w3-text-green";
+                make_label();
+
+                input.type = "email";
+                input.name = "email";
+                input.id = "email";
+                input.classes = "w3-input w3-border";
+                makeinput();
+
+                label.title = "متن نظر";
+                label.classes = "w3-text-green";
+                make_label();
+
+                textarea.name = "txt";
+                textarea.id = "txt";
+                textarea.classes = "w3-input w3-round";
+                make_textarea();
+
+                spanbtn.title = "ثبت";
+                spanbtn.classes = "w3-btn w3-round w3-margin w3-green";
+                make_span_btn();
+
+                showsubkala('send_nazar');
+            }
+        </script>
     </div>
 </div>
-<script>loadpages();</script>
+
+<div id="newspg" class="page">
+    <div id="newslid">
+        <div id="newslidpic">
+            <div style="width: 100%;" class="newslide1"><img src="2020-11-20_164056.png" style="width: 100%;">
+            </div>
+            <div style="width: 100%; display: none;" class="newslide1"><img src="2020-11-20_164041.png"
+                                                                            style="width: 100%;">
+            </div>
+            <div style="width: 100%; display: none;" class="newslide1"><img src="2020-11-20_163848.png"
+                                                                            style="width: 100%;">
+            </div>
+        </div>
+        <div id="newslid1btns" class="btnplace"></div>
+    </div>
+    <script>
+        load_slid_btn("newslid1btns", "newslide1", 3);
+    </script>
+    <div class="w3-container">
+        <h3 style="font-family: 'tahoma'; font-weight: bold;">عنوان خبر</h3>
+        <div>
+            asdlasjhl asdljkashdkj ashdlasjk dhasjkld hasldk hasdl jkashdlk jhflasdjkfhsdjklh
+        </div>
+        <div style="margin-top: 10px;">
+            <span class="w3-btn w3-blue w3-round" onclick="showsubnew('nazaratnews')">نظرات</span>
+            <span class="w3-btn w3-blue-gray w3-round" onclick="loadsndnazarnews()">ارسال نظر</span>
+        </div>
+        <script>
+            function hidesubnew() {
+                for (i = 0; i < document.getElementsByClassName('subnewspg').length; i++) {
+                    document.getElementsByClassName('subnewspg')[i].style.display = "none";
+                }
+            }
+
+            function showsubnew(id) {
+                hidesubnew();
+                document.getElementById(id).style.display = "";
+            }
+        </script>
+
+        <div id="nazaratnews" class="subnewspg" style="width: 100%; margin-top: 10px;">
+
+            <div class="w3-panel w3-round w3-light-gray w3-padding-24">
+                <span>mr oxy</span>
+                <div>
+                    this is user comment....
+                </div>
+            </div>
+
+        </div>
+
+        <div id="send_nazarnews" class="subnewspg w3-light-gray w3-round w3-container w3-padding-24"
+             style="width: 100%; margin-top: 10px; display: none;">
+
+        </div>
+        <script>
+            function loadsndnazarnews() {
+                placeid = "send_nazarnews";
+                document.getElementById(placeid).innerHTML = "";
+
+                label.title = "نام و نام خانوادگی";
+                label.classes = "w3-text-green";
+                make_label();
+
+                input.type = "text";
+                input.name = "name";
+                input.id = "name";
+                input.classes = "w3-input w3-border";
+                makeinput();
+
+                label.title = "ایمیل";
+                label.classes = "w3-text-green";
+                make_label();
+
+                input.type = "email";
+                input.name = "email";
+                input.id = "email";
+                input.classes = "w3-input w3-border";
+                makeinput();
+
+                label.title = "متن نظر";
+                label.classes = "w3-text-green";
+                make_label();
+
+                textarea.name = "txt";
+                textarea.id = "txt";
+                textarea.classes = "w3-input w3-round";
+                make_textarea();
+
+                spanbtn.title = "ثبت";
+                spanbtn.classes = "w3-btn w3-round w3-margin w3-green";
+                make_span_btn();
+
+                showsubnew('send_nazarnews');
+            }
+        </script>
+        <br><br>
+        <script>loadpages();</script>
 </body>
 </html>
