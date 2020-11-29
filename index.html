@@ -12,7 +12,7 @@
 <body style="direction: rtl; font-family: Tahoma;">
 
 <div class="scrollmenu w3-row w3-red" style="direction:rtl; padding-top: 3px; padding-bottom: 3px;">
-    <span style="font-size: 16px;" class="w3-btn w3-card w3-right">☰</span>
+    <span style="font-size: 16px;" class="w3-btn w3-card w3-right" onclick="gotopage('menupg')">☰</span>
     <span style="font-size: 16px;" class="w3-red w3-btn w3-card w3-left"><img src="home.png"
                                                                               style="width: 15px;"
                                                                               onclick="gotopage('mainpage')"></span>
@@ -81,7 +81,9 @@
             </tr>
         </table>
     </div>
-    <br>
+    <div style="width: 100%; text-align: left;">
+        <span class="w3-red w3-round w3-btn w3-margin" onclick="gotopage('kalalistpg')">همه محصولات</span>
+    </div>
     <hr>
 
     <h3 style="font-weight: bold;" class="w3-container">آخرین مطالب</h3>
@@ -131,8 +133,9 @@
             </tr>
         </table>
     </div>
-    <br>
-    <br>
+    <div style="width: 100%; text-align: left;">
+        <span class="w3-red w3-round w3-btn w3-margin" onclick="gotopage('newslistpg')">همه مطالب</span>
+    </div>
     <div class="w3-red">
         <h3 style="font-weight: bold;" class="w3-container">درباره ما</h3>
         <div style="width: 100%;" class="w3-container">
@@ -152,6 +155,84 @@
         <br>
     </div>
 </div>
+
+<div id="menupg" class="page">
+    <br><br>
+    <div style="width: 100%; text-align: center;">
+        <img src="nopic.jpg" style="width: 150px;">
+    </div>
+    <br>
+    <div class="w3-container w3-padding">
+        <span class="w3-btn w3-border w3-border-light-blue w3-hover-gray" style="width: 100%; text-align: right;"
+              onclick="loadloginpg()">ورود</span>
+        <br>
+        <br>
+        <span class="w3-btn w3-border w3-border-red w3-hover-gray"
+              style="width: 100%; text-align: right;" onclick="loadreg()">ثبت نام</span>
+        <br>
+        <br>
+        <span class="w3-btn w3-border w3-border-light-blue w3-hover-gray" style="width: 100%; text-align: right;">درباره ما</span>
+        <br>
+        <br>
+        <span class="w3-btn w3-border w3-border-red w3-hover-gray"
+              style="width: 100%; text-align: right;">ارتباط با ما</span>
+    </div>
+</div>
+<div id="loginpg" class="page w3-padding">
+</div>
+<script>
+    function loadloginpg() {
+        placeid = "loginpg";
+        document.getElementById(placeid).innerHTML = "";
+
+        label.title = "نام کاربری";
+        label.classes = "w3-text-green";
+        make_label();
+
+        input.name = "user";
+        input.id = "user";
+        input.type = "text";
+        input.classes = "w3-input w3-border";
+        makeinput();
+
+        label.title = "کلمه عبور";
+        label.classes = "w3-text-green";
+        make_label();
+
+        input.name = "pass";
+        input.id = "pass";
+        input.type = "password";
+        input.classes = "w3-input w3-border";
+        makeinput();
+
+        spanbtn.classes = "w3-btn w3-green w3-round";
+        spanbtn.title = "ورود";
+        spanbtn.style = "width:40%; margin-right:30%; margin-top:5px;";
+        make_span_btn();
+
+        gotopage("loginpg");
+    }
+</script>
+
+<div id="regpg" class="page w3-padding">
+</div>
+<script>
+    function loadreg() {
+        placeid = "regpg";
+        document.getElementById(placeid).innerHTML = "";
+
+        fastinput("name", "text", "نام");
+        fastinput("family", "text", "نام خانوادگی");
+        fastinput("password", "password", "کلمه عبور");
+        fastinput("rpassword", "password", "تکرار کلمه عبور");
+        fastinput("userintroducing", "text", "کاربر معرف");
+        fastinput("mob", "text", "شماره تلفن همراه");
+        fastinput("email", "text", "ایمیل");
+        fastbtn("ثبت نام");
+        gotopage('regpg');
+    }
+</script>
+
 <div id="kalapg" class="page">
     <div id="kalaslid">
         <div id="kalaslidpic">
@@ -361,7 +442,79 @@
                 showsubnew('send_nazarnews');
             }
         </script>
+
         <br><br>
-        <script>loadpages();</script>
+    </div>
+</div>
+
+<div id="kalalistpg" class="page">
+
+
+    <div style="width: 94%; margin-right: 3%;" class="w3-panel w3-round w3-card w3-light-gray">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 30%; vertical-align: top;"><img src="nopic.jpg" style="width: 100%;"></td>
+                <td style="vertical-align: top; padding-right: 5px; width: 60%;">
+                    <b>عنوان مطلب</b>
+                    <div style="width: 100%;">
+                        سشیشسی شسیشس یشسیسشی سشیسشیشس شسی شسی شسی شسی شسی شسخلاصه مطلب
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="width: 94%; margin-right: 3%;" class="w3-panel w3-round w3-card w3-light-gray">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 30%; vertical-align: top;"><img src="nopic.jpg" style="width: 100%;"></td>
+                <td style="vertical-align: top; padding-right: 5px; width: 60%;">
+                    <b>عنوان مطلب</b>
+                    <div style="width: 100%;">
+                        سشیشسی شسیشس یشسیسشی سشیسشیشس شسی شسی شسی شسی شسی شسخلاصه مطلب
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+<div id="newslistpg" class="page">
+
+
+    <div style="width: 94%; margin-right: 3%;" class="w3-panel w3-round w3-card w3-light-gray">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 30%; vertical-align: top;"><img src="nopic.jpg" style="width: 100%;"></td>
+                <td style="vertical-align: top; padding-right: 5px; width: 60%;">
+                    <b>عنوان مطلب</b>
+                    <div style="width: 100%;">
+                        سشیشسی شسیشس یشسیسشی سشیسشیشس شسی شسی شسی شسی شسی شسخلاصه مطلب
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="width: 94%; margin-right: 3%;" class="w3-panel w3-round w3-card w3-light-gray">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 30%; vertical-align: top;"><img src="nopic.jpg" style="width: 100%;"></td>
+                <td style="vertical-align: top; padding-right: 5px; width: 60%;">
+                    <b>عنوان مطلب</b>
+                    <div style="width: 100%;">
+                        سشیشسی شسیشس یشسیسشی سشیسشیشس شسی شسی شسی شسی شسی شسخلاصه مطلب
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+
+<script>loadpages();</script>
 </body>
 </html>
