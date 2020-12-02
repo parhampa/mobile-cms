@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        var websiteurl = "http://www.gtsalamat.ir/mob/";
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="lib/jquery.js"></script>
@@ -30,12 +33,10 @@
         </div>
         <div id="slid1btns" class="btnplace"></div>
     </div>
-    <script>
-        load_slid_btn("slid1btns", "picslide1", 3);
-    </script>
 
     <h3 style="font-weight: bold;" class="w3-container">آخرین محصولات</h3>
-    <div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;">
+    <div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;"
+         id="lastkalamainpg">
         <table style="text-align: center;">
             <tr>
                 <td>
@@ -82,12 +83,12 @@
         </table>
     </div>
     <div style="width: 100%; text-align: left;">
-        <span class="w3-red w3-round w3-btn w3-margin" onclick="gotopage('kalalistpg')">همه محصولات</span>
+        <span class="w3-red w3-round w3-btn w3-margin" onclick="load_list_kala()">همه محصولات</span>
     </div>
     <hr>
 
     <h3 style="font-weight: bold;" class="w3-container">آخرین مطالب</h3>
-    <div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;">
+    <div class="scrollmenu w3-row" style="direction:rtl; margin-top:2px; padding-left: 20%;" id="lastnewsmainpg">
         <table style="text-align: center;">
             <tr>
                 <td>
@@ -134,7 +135,7 @@
         </table>
     </div>
     <div style="width: 100%; text-align: left;">
-        <span class="w3-red w3-round w3-btn w3-margin" onclick="gotopage('newslistpg')">همه مطالب</span>
+        <span class="w3-red w3-round w3-btn w3-margin" onclick="load_list_news()">همه مطالب</span>
     </div>
     <div class="w3-red">
         <h3 style="font-weight: bold;" class="w3-container">درباره ما</h3>
@@ -514,7 +515,11 @@
 
 
 </div>
-
+<script src="lib/last_news.js"></script>
+<script src="lib/last_kala.js"></script>
+<script src="lib/slider.js"></script>
+<script src="lib/list_kala.js"></script>
+<script src="lib/list_news.js"></script>
 <script>loadpages();</script>
 </body>
 </html>
