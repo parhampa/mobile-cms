@@ -235,6 +235,7 @@
 </script>
 
 <div id="kalapg" class="page">
+    <div id="single_kala_req"></div>
     <div id="kalaslid">
         <div id="kalaslidpic">
             <div style="width: 100%;" class="kalaslide1"><img src="2020-11-20_164056.png" style="width: 100%;">
@@ -248,12 +249,9 @@
         </div>
         <div id="kalaslid1btns" class="btnplace"></div>
     </div>
-    <script>
-        load_slid_btn("kalaslid1btns", "kalaslide1", 3);
-    </script>
     <div class="w3-container">
-        <h3 style="font-family: 'tahoma'; font-weight: bold;">عنوان کالا</h3>
-        <div>
+        <h3 style="font-family: 'tahoma'; font-weight: bold;" id="kalatitle">عنوان کالا</h3>
+        <div id="kalades">
             asdlasjhl asdljkashdkj ashdlasjk dhasjkld hasldk hasdl jkashdlk jhflasdjkfhsdjklh
         </div>
         <div style="margin-top: 10px;">
@@ -275,18 +273,22 @@
         </script>
         <div id="vijegi" class="subkalapg" style="width: 100%; margin-top: 10px;">
             <table class="w3-table-all" style="width: 100%;">
+                <thead>
                 <tr>
                     <th class="w3-right-align">عنوان ویژگی</th>
                     <th class="w3-right-align">شرح</th>
                 </tr>
+                </thead>
+                <tbody id="vijegi_tbl">
                 <tr>
-                    <td class="w3-right-align">test</td>
-                    <td class="w3-right-align">test</td>
+                    <td class="w3-right-align">vijegi</td>
+                    <td class="w3-right-align">disc</td>
                 </tr>
                 <tr>
                     <td class="w3-right-align">test</td>
                     <td class="w3-right-align">test</td>
                 </tr>
+                </tbody>
             </table>
         </div>
         <div id="nazarat" class="subkalapg" style="width: 100%; margin-top: 10px; display: none;">
@@ -345,6 +347,8 @@
                 showsubkala('send_nazar');
             }
         </script>
+
+        <br><br>
     </div>
 </div>
 
@@ -353,21 +357,12 @@
         <div id="newslidpic">
             <div style="width: 100%;" class="newslide1"><img src="2020-11-20_164056.png" style="width: 100%;">
             </div>
-            <div style="width: 100%; display: none;" class="newslide1"><img src="2020-11-20_164041.png"
-                                                                            style="width: 100%;">
-            </div>
-            <div style="width: 100%; display: none;" class="newslide1"><img src="2020-11-20_163848.png"
-                                                                            style="width: 100%;">
-            </div>
         </div>
-        <div id="newslid1btns" class="btnplace"></div>
     </div>
-    <script>
-        load_slid_btn("newslid1btns", "newslide1", 3);
-    </script>
     <div class="w3-container">
-        <h3 style="font-family: 'tahoma'; font-weight: bold;">عنوان خبر</h3>
-        <div>
+        <div id="single_new_req"></div>
+        <h3 style="font-family: 'tahoma'; font-weight: bold;" id="newtitle">عنوان خبر</h3>
+        <div id="newcontent">
             asdlasjhl asdljkashdkj ashdlasjk dhasjkld hasldk hasdl jkashdlk jhflasdjkfhsdjklh
         </div>
         <div style="margin-top: 10px;">
@@ -520,6 +515,8 @@
 <script src="lib/slider.js"></script>
 <script src="lib/list_kala.js"></script>
 <script src="lib/list_news.js"></script>
+<script src="lib/single_news.js"></script>
+<script src="lib/single_kala.js"></script>
 <script>loadpages();</script>
 </body>
 </html>
