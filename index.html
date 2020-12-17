@@ -4,21 +4,74 @@
     <script>
         var websiteurl = "http://www.gtsalamat.ir/mob/";
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/index.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib/palib.js"></script>
     <link rel="stylesheet" href="lib/w3.css">
     <link rel="stylesheet" href="lib/palib.css">
     <title>mobile cms</title>
+    <script>
+        function onmyload() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        function onDeviceReady() {
+            console.log(FileTransfer);
+        }
+
+        function onLoad() {
+            document.addEventListener("deviceready", ondvr, false);
+
+        }
+
+        function ondvr() {
+            document.addEventListener("backbutton", onbb, false);
+        }
+
+        function onbb() {
+            settblwidth();
+            if (getpgname("loading") == true) {
+                navigator.app.exitApp();
+            }
+            if (getpgname("mainpage") == true) {
+                navigator.app.exitApp();
+            }
+            if (getpgname("menupg") == true) {
+                gotopage("mainpage")
+            }
+            if (getpgname("kalapg") == true) {
+                gotopage("mainpage")
+            }
+            if (getpgname("newspg") == true) {
+                gotopage("mainpage")
+            }
+            if (getpgname("kalalistpg") == true) {
+                gotopage("mainpage")
+            }
+            if (getpgname("newslistpg") == true) {
+                gotopage("mainpage")
+            }
+        }
+
+        onLoad();
+    </script>
 </head>
-<body style="direction: rtl; font-family: Tahoma;">
+<body style="direction: rtl; font-family: Tahoma;" onload="onLoad()">
 
 <div class="scrollmenu w3-row w3-red" style="direction:rtl; padding-top: 3px; padding-bottom: 3px;">
     <span style="font-size: 16px;" class="w3-btn w3-card w3-right" onclick="gotopage('menupg')">☰</span>
     <span style="font-size: 16px;" class="w3-red w3-btn w3-card w3-left"><img src="home.png"
                                                                               style="width: 15px;"
                                                                               onclick="gotopage('mainpage')"></span>
+</div>
+<div class="page" id="loading">
+    <img src="loading.png" style="width: 100%;" id="loadingpic">
 </div>
 <div class="page" id="mainpage">
     <div id="mainslid">
@@ -160,11 +213,12 @@
 <div id="menupg" class="page">
     <br><br>
     <div style="width: 100%; text-align: center;">
-        <img src="nopic.jpg" style="width: 150px;">
+        <img src="logo.png" style="width: 150px;">
     </div>
     <br>
     <div class="w3-container w3-padding">
-        <span class="w3-btn w3-border w3-border-light-blue w3-hover-gray" style="width: 100%; text-align: right;"
+        <span id="loginbtn" class="w3-btn w3-border w3-border-light-blue w3-hover-gray"
+              style="width: 100%; text-align: right;"
               onclick="loadloginpg()">ورود</span>
         <br>
         <br>
@@ -177,62 +231,17 @@
         <br>
         <span class="w3-btn w3-border w3-border-red w3-hover-gray"
               style="width: 100%; text-align: right;">ارتباط با ما</span>
+        <br>
+        <br>
+        <span id="logoutbtn" class="w3-btn w3-border w3-border-light-blue w3-hover-gray"
+              style="width: 100%; text-align: right; display: none;" onclick="logoutuser()">خروج از حساب کاربری</span>
     </div>
 </div>
 <div id="loginpg" class="page w3-padding">
 </div>
-<script>
-    function loadloginpg() {
-        placeid = "loginpg";
-        document.getElementById(placeid).innerHTML = "";
-
-        label.title = "نام کاربری";
-        label.classes = "w3-text-green";
-        make_label();
-
-        input.name = "user";
-        input.id = "user";
-        input.type = "text";
-        input.classes = "w3-input w3-border";
-        makeinput();
-
-        label.title = "کلمه عبور";
-        label.classes = "w3-text-green";
-        make_label();
-
-        input.name = "pass";
-        input.id = "pass";
-        input.type = "password";
-        input.classes = "w3-input w3-border";
-        makeinput();
-
-        spanbtn.classes = "w3-btn w3-green w3-round";
-        spanbtn.title = "ورود";
-        spanbtn.style = "width:40%; margin-right:30%; margin-top:5px;";
-        make_span_btn();
-
-        gotopage("loginpg");
-    }
-</script>
 
 <div id="regpg" class="page w3-padding">
 </div>
-<script>
-    function loadreg() {
-        placeid = "regpg";
-        document.getElementById(placeid).innerHTML = "";
-
-        fastinput("name", "text", "نام");
-        fastinput("family", "text", "نام خانوادگی");
-        fastinput("password", "password", "کلمه عبور");
-        fastinput("rpassword", "password", "تکرار کلمه عبور");
-        fastinput("userintroducing", "text", "کاربر معرف");
-        fastinput("mob", "text", "شماره تلفن همراه");
-        fastinput("email", "text", "ایمیل");
-        fastbtn("ثبت نام");
-        gotopage('regpg');
-    }
-</script>
 
 <div id="kalapg" class="page">
     <div id="single_kala_req"></div>
@@ -269,6 +278,7 @@
             function showsubkala(id) {
                 hidesubkala();
                 document.getElementById(id).style.display = "";
+                show_nazarat();
             }
         </script>
         <div id="vijegi" class="subkalapg" style="width: 100%; margin-top: 10px;">
@@ -306,47 +316,6 @@
              style="width: 100%; margin-top: 10px; display: none;">
 
         </div>
-        <script>
-            function loadsndnazar() {
-                placeid = "send_nazar";
-                document.getElementById(placeid).innerHTML = "";
-
-                label.title = "نام و نام خانوادگی";
-                label.classes = "w3-text-green";
-                make_label();
-
-                input.type = "text";
-                input.name = "name";
-                input.id = "name";
-                input.classes = "w3-input w3-border";
-                makeinput();
-
-                label.title = "ایمیل";
-                label.classes = "w3-text-green";
-                make_label();
-
-                input.type = "email";
-                input.name = "email";
-                input.id = "email";
-                input.classes = "w3-input w3-border";
-                makeinput();
-
-                label.title = "متن نظر";
-                label.classes = "w3-text-green";
-                make_label();
-
-                textarea.name = "txt";
-                textarea.id = "txt";
-                textarea.classes = "w3-input w3-round";
-                make_textarea();
-
-                spanbtn.title = "ثبت";
-                spanbtn.classes = "w3-btn w3-round w3-margin w3-green";
-                make_span_btn();
-
-                showsubkala('send_nazar');
-            }
-        </script>
 
         <br><br>
     </div>
@@ -379,6 +348,7 @@
             function showsubnew(id) {
                 hidesubnew();
                 document.getElementById(id).style.display = "";
+                show_nazarat_news();
             }
         </script>
 
@@ -397,48 +367,6 @@
              style="width: 100%; margin-top: 10px; display: none;">
 
         </div>
-        <script>
-            function loadsndnazarnews() {
-                placeid = "send_nazarnews";
-                document.getElementById(placeid).innerHTML = "";
-
-                label.title = "نام و نام خانوادگی";
-                label.classes = "w3-text-green";
-                make_label();
-
-                input.type = "text";
-                input.name = "name";
-                input.id = "name";
-                input.classes = "w3-input w3-border";
-                makeinput();
-
-                label.title = "ایمیل";
-                label.classes = "w3-text-green";
-                make_label();
-
-                input.type = "email";
-                input.name = "email";
-                input.id = "email";
-                input.classes = "w3-input w3-border";
-                makeinput();
-
-                label.title = "متن نظر";
-                label.classes = "w3-text-green";
-                make_label();
-
-                textarea.name = "txt";
-                textarea.id = "txt";
-                textarea.classes = "w3-input w3-round";
-                make_textarea();
-
-                spanbtn.title = "ثبت";
-                spanbtn.classes = "w3-btn w3-round w3-margin w3-green";
-                make_span_btn();
-
-                showsubnew('send_nazarnews');
-            }
-        </script>
-
         <br><br>
     </div>
 </div>
@@ -517,6 +445,14 @@
 <script src="lib/list_news.js"></script>
 <script src="lib/single_news.js"></script>
 <script src="lib/single_kala.js"></script>
+<script src="lib/reg.js"></script>
+<script src="lib/login.js"></script>
 <script>loadpages();</script>
+<script>
+    if (localStorage.user != "" && localStorage.user != undefined && localStorage.pass != "" && localStorage.pass != undefined) {
+        document.getElementById('loginbtn').style.display = "none";
+        document.getElementById('logoutbtn').style.display = "";
+    }
+</script>
 </body>
 </html>
