@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="lib/palib.css">
     <title>mobile cms</title>
     <script>
-        function onmyload() {
-            document.addEventListener("deviceready", onDeviceReady, false);
-        }
 
         function onDeviceReady() {
             console.log(FileTransfer);
@@ -35,7 +32,6 @@
         }
 
         function onbb() {
-            settblwidth();
             if (getpgname("loading") == true) {
                 navigator.app.exitApp();
             }
@@ -43,19 +39,25 @@
                 navigator.app.exitApp();
             }
             if (getpgname("menupg") == true) {
-                gotopage("mainpage")
+                gotopage("mainpage");
             }
             if (getpgname("kalapg") == true) {
-                gotopage("mainpage")
+                gotopage("mainpage");
             }
             if (getpgname("newspg") == true) {
-                gotopage("mainpage")
+                gotopage("mainpage");
             }
             if (getpgname("kalalistpg") == true) {
-                gotopage("mainpage")
+                gotopage("mainpage");
             }
             if (getpgname("newslistpg") == true) {
-                gotopage("mainpage")
+                gotopage("mainpage");
+            }
+			if (getpgname("loginpg") == true) {
+                gotopage("menupg");
+            }
+			if (getpgname("regpg") == true) {
+                gotopage("menupg");
             }
         }
 
